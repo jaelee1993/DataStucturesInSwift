@@ -12,8 +12,8 @@ class Node {
 }
 
 /** Sample nodes */
-let nodeThree = Node(data: 3, next: nil)
-let nodeTwo = Node(data: 2, next: nodeThree)
+//let nodeThree = Node(data: 3, next: nil)
+let nodeTwo = Node(data: 2, next: nil)
 let nodeOne = Node(data: 1, next: nodeTwo)
 
 /** Print Lists */
@@ -27,8 +27,12 @@ func printNodeList(_ headNode:Node) {
     
 }
 
-
-func reverseNodeList(_ headNode:Node)  -> Node? {
+/**
+ Interactive Method
+ - Time: O(n)
+ - Space: O(1)
+ */
+func reverseNodeList_Interactive(_ headNode:Node)  -> Node? {
     var currentNode:Node? = headNode
     var next:Node?
     var prev:Node?
@@ -41,13 +45,32 @@ func reverseNodeList(_ headNode:Node)  -> Node? {
     }
     
     return prev
-    
-    
+}
+
+/**
+ Recursive Method
+ - Time: O(n)
+ - Space: O(1)
+ */
+func reverseNodeList_Recursive(_ headNode:Node?)  -> Node? {
+    if headNode == nil {
+        return headNode
+    }
+    if headNode?.next == nil {
+        return headNode
+    }
+    let newHead = reverseNodeList_Recursive(headNode?.next)
+    headNode?.next?.next = headNode
+    headNode?.next = nil
+    return newHead
 }
 
 print("Original")
 printNodeList(nodeOne)
 
-let reversedHead = reverseNodeList(nodeOne)
 print("Reversed")
-printNodeList(reversedHead!)
+//let reversedHead = reverseNodeList_Interactive(nodeOne)
+//printNodeList(reversedHead!)
+
+let reversedHead_recursive =  reverseNodeList_Recursive(nodeOne)
+printNodeList(reversedHead_recursive!)
