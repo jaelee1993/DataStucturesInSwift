@@ -29,7 +29,7 @@ func printNodeList(_ headNode:Node) {
 
 /**
  Interactive Method
- - Time: O(n)
+ - Time: O(n) => Assume that n is the list's length, the time complexity is O(n).
  - Space: O(1)
  */
 func reverseNodeList_Interactively(_ headNode:Node)  -> Node? {
@@ -49,8 +49,8 @@ func reverseNodeList_Interactively(_ headNode:Node)  -> Node? {
 
 /**
  Recursive Method
- - Time: O(n)
- - Space: O(1)
+ - Time: O(n) => Assume that n is the list's length, the time complexity is O(n).
+ - Space: O(n) => The extra space comes from implicit stack space due to recursion. The recursion could go up to n levels deep.
  */
 func reverseNodeList_Recursively(_ headNode:Node?)  -> Node? {
     if headNode == nil {
