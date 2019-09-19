@@ -67,7 +67,6 @@ class Node_BinarySearchTree {
     func printPreOrder() {
         print(data)
         
-        
         if left != nil {
             left!.printInOrder()
         }
@@ -166,7 +165,7 @@ rootNodeTwo.insert(3)
 rootNodeTwo.insert(33)
 rootNodeTwo.insert(2)
 rootNodeTwo.insert(10)
-rootNodeTwo.insert(1)
+rootNodeTwo.insert(26266)
 
 
 
@@ -187,4 +186,4 @@ rootNodeTwo.insert(1)
 //print(rootNode.printPostOrder())
 
 
-isTreesIdentical(treeOne: rootNode, treeTwo: rootNodeTwo)
+print(isTreesIdentical(treeOne: rootNode, treeTwo: rootNodeTwo))
